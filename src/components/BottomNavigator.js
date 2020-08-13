@@ -1,53 +1,31 @@
-import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Icon} from 'react-native-elements'
-
+import React, {Component} from 'react';
+import {View} from 'react-native';
+import {Icon} from 'react-native-elements';
+import {styles} from './theme/styles';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 class BottomNavigator extends Component {
-    render() {
-        return (
-            <View style={{
-                flex: 1,
-                flexDirection: 'column',
-                backgroundColor: '#f8f4f4'
-
-            }}>
-                <View style={{ position: 'absolute', alignSelf: 'center', backgroundColor: '#f8f4f4', width: 70, height: 70, borderRadius: 35, bottom: 25, zIndex: 10 }}>
-                    <Icon
-                        name='add'
-                        type='material'
-                        color='#f00'
-                        containerStyle={{ alignSelf: 'center' }}
-                        reverse
-                        size={28}
-                        onPress={() => {}}
-                    />
-                </View>
-                <View style={{ position: 'absolute', backgroundColor: '#2196F3', bottom: 0, zIndex: 1, width: '100%', height: 60, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 15, paddingVertical: 10 }}>
-                    <Icon
-                        name='menu'
-                        type='material'
-                        color='#fff'
-                        onPress={() => {}}
-
-                    />
-                    <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                        <Icon
-                            name='favorite'
-                            type='material'
-                            color='#fff'
-                            onPress={() => {}}
-                            containerStyle={{ marginHorizontal: 16 }}
-                        />
-                        <Icon
-                            name='search'
-                            type='material'
-                            color='#fff'
-                        />
-                    </View>
-                </View>
-            </View>
-        );
-    }
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.holderStyle}>
+          <Icon name="home" type="material" reverse size={28} />
+        </View>
+        <View style={styles.barStyle}>
+          <Icon name="menu" type="material" color="#fff" />
+          <Icon name="block" type="material" color="#fff" />
+          <View style={styles.container1}>
+            <Icon
+              name="favorite"
+              type="material"
+              color="#fff"
+              containerStyle={{marginHorizontal: 70}}
+            />
+            <Icon name="search" type="material" color="#fff" />
+          </View>
+        </View>
+      </View>
+    );
+  }
 }
 
 export default BottomNavigator;
